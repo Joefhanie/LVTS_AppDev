@@ -25,11 +25,6 @@ db.connect((err) => {
   console.log('Connected to MySQL database.')
 })
 
-const PORT = process.env.PORT || 3000
-app.listen(PORT, '0.0.0.0', function () {
-  console.log(`✅ Server running on port ${PORT}`)
-})
-
 // Sample API Route
 app.get('/users', (req, res) => {
   db.query('SELECT * FROM users', (err, results) => {
@@ -38,4 +33,9 @@ app.get('/users', (req, res) => {
     }
     res.json(results)
   })
+})
+
+const PORT = process.env.PORT || 8080
+app.listen(PORT, '0.0.0.0', function () {
+  console.log(`✅ Server running on port ${PORT}`)
 })

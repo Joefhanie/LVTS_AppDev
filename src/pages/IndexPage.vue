@@ -18,7 +18,7 @@ const users = ref([])
 
 const fetchUsers = async () => {
   try {
-    const response = await axios.get('mysql-production-8eea.up.railway.app/users')
+    const response = await axios.get('lvts.up.railway.app/users')
     users.value = response.data
 
     console.log(response.value)
